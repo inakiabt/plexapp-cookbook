@@ -1,7 +1,6 @@
+default['plexapp']['package_arch'] = node['kernel']['machine']
 case node['kernel']['machine']
-when 'x86_64'
-  default['plexapp']['package_arch'] = 'x86_64'
-when 'i686', 'i586', 'i386'
+when 'i686', 'i586'
   default['plexapp']['package_arch'] = 'i686'
 end
 
@@ -17,6 +16,7 @@ case platform_family
 when 'debian'
   default['plexapp']['package_type'] = 'deb'
   override['plexapp']['package_arch'] = 'amd64' if node['kernel']['machine'] == 'x86_64'
+  override['plexapp']['package_arch'] = 'i386' if node['kernel']['machine'] == 'i686'
 when 'fedora', 'rhel', 'suse'
   default['plexapp']['package_type'] = 'rpm'
 end

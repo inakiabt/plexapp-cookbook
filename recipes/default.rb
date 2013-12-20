@@ -19,3 +19,4 @@
 # 
 
 include_recipe "plexapp::server"
+include_recipe "plexapp:hometheater"
