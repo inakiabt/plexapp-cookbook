@@ -7,7 +7,7 @@ end
 
 default['plexapp']['download_server'] = 'http://downloads.plexapp.com'
 default['plexapp']['server']['install_method'] = 'direct_download'
-default['plexapp']['server']['version'] = '0.9.8.6.175-88ffbb2'
+default['plexapp']['server']['version'] = '0.9.8.17.282-c844f09'
 
 # set this in node.json to make reloads impotent, e.g.
 # cb32f546a68a6086dcba6d360e4cc482c6628c1fc4fe458bb54e564ad2187f22  plexmediaserver_0.9.8.6.175-88ffbb2_amd64.deb
