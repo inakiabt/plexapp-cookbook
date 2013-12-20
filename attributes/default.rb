@@ -16,7 +16,7 @@ default['plexapp']['server']['package_checksum'] = nil
 case platform_family
 when 'debian'
   default['plexapp']['package_type'] = 'deb'
-  override['plexapp']['package_arch'] = 'amd64' if node['kernel']['machine'] = 'x86_64'
+  override['plexapp']['package_arch'] = 'amd64' if node['kernel']['machine'] == 'x86_64'
 when 'fedora', 'rhel', 'suse'
   default['plexapp']['package_type'] = 'rpm'
 end
