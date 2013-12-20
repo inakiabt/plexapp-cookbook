@@ -18,21 +18,34 @@
 # limitations under the License.
 #
 
-apt_repository 'plexht' do
-  uri          'http://ppa.launchpad.net/plexapp/plexht'
-  components   ['main']
+apt_repository "libcec" do
+  uri "http://ppa.launchpad.net/pulse-eight/libcec/ubuntu"
+  distribution 'raring'
+  components ["main"]
+  keyserver "keyserver.ubuntu.com"
+  key "5F6EB4BE"
 end
 
-apt_repository 'ffmpeg' do
-  uri          'http://ppa.launchpad.net/jon-severinsson/ffmpeg'
-  components   ['main']
+apt_repository "ffmpeg" do
+  uri "http://ppa.launchpad.net/jon-severinsson/ffmpeg/ubuntu"
+  distribution 'raring'
+  components ["main"]
+  keyserver "keyserver.ubuntu.com"
+  key "CFCA9579"
 end
 
-apt_repository 'libcec' do
-  uri          'http://ppa.launchpad.net/pulse-eight/libcec'
-  components   ['main']
+apt_repository "plexht" do
+  uri "http://ppa.launchpad.net/plexapp/plexht/ubuntu"
+  distribution 'raring'
+  components ["main"]
+  keyserver "keyserver.ubuntu.com"
+  key "EB7DFFFB"
 end
 
-[ "plexhometheater", "paprefs", "pavucontrol" ].each do |pkg|
+# execute "apt-get update" do
+#   command "sudo apt-get update"
+# end
+
+[ "paprefs", "pavucontrol", "plexhometheater" ].each do |pkg|
     package pkg
 end
